@@ -1,9 +1,10 @@
 import React from 'react'
 
-function ExitButton({ setVisibility }) {
+function ExitButton({ setVisibility, setModal }) {
 
   function handleExit() {
     setVisibility(false);
+    setModal(false);
   }
 
   return (

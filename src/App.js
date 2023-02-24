@@ -6,15 +6,24 @@ import './index.css';
 import AddMealModal from "./components/AddMealModal";
 
 function App() {
+  const [modal, setModal] = useState(false);
   const [addMealModalVisible, setAddMealModalVisible] = useState(false)
+  
+  useEffect(() => {
+    document.body.style.overflow = modal ? "hidden" : "unset";
+  }, [modal]);
 
   return (
     <>
       <Brand />
-      <AddMeal setAddMealModalVisible={setAddMealModalVisible}/>
+      <AddMeal 
+        setModal={setModal} 
+        setAddMealModalVisible={setAddMealModalVisible}
+      />
       <AddMealModal 
         addMealModalVisible={addMealModalVisible} 
         setAddModalVisible={setAddMealModalVisible}
+        setModal={setModal}
       />
     </>
   );

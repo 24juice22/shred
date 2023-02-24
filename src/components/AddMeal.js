@@ -1,9 +1,10 @@
 import React from 'react'
 
-function AddMeal({ setAddMealModalVisible }) {
+function AddMeal({ setAddMealModalVisible, setModal }) {
 
   function handleAddMealClick() {
     setAddMealModalVisible(true);
+    setModal(true);
   }
 
   return (
