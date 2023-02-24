@@ -41,6 +41,20 @@ body {
   transition-duration: .2s;
 }
 
+.btn--exit {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  border-radius: .8rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.btn--exit:active {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
 .btn--add-meal {
   background: linear-gradient(to bottom right, rgb(0, 98, 0), rgb(2, 247, 2));
   font-size: 5rem;

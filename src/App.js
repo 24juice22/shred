@@ -12,9 +12,10 @@ function App() {
     <>
       <Brand />
       <AddMeal setAddMealModalVisible={setAddMealModalVisible}/>
-      <AddMealModal addMealModalVisible={addMealModalVisible}/>
-      <h1>asdasd</h1>
-      
+      <AddMealModal 
+        addMealModalVisible={addMealModalVisible} 
+        setAddModalVisible={setAddMealModalVisible}
+      />
     </>
   );
 }
