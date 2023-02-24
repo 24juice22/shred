@@ -62,6 +62,9 @@ body {
   border: none;
   border-radius: 50%;
   box-shadow: 0px 0px 12px #646b79;
+  position: fixed;
+  top: 5rem;
+  right: 2rem;
 }
 
 .btn--add-meal:active {
