@@ -8,7 +8,7 @@ function AddMeal({ setAddMealModalVisible, setModal }) {
   }
 
   return (
-    <button className="btn btn--outline btn--add-meal" onClick={handleAddMealClick}>+</button>
+    <button onClick={handleAddMealClick}><i className="fa-solid fa-carrot btn btn--outline btn--add-meal"></i></button>
   )
 }
 
