@@ -8,7 +8,7 @@ function AddWorkout({ setModal, setAddWorkoutModalVisible }) {
   }
 
   return (
-    <button onClick={handleAddWorkoutClick}><i className="fa-solid fa-person-running btn btn--outline btn--add-workout"></i></button>
+    <button className="btn btn--add btn--add-workout"onClick={handleAddWorkoutClick}><i className="fa-solid fa-person-running"></i></button>
   )
 }
 

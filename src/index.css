@@ -63,35 +63,32 @@ body {
   color: white;
 }
 
-.btn--add-meal {
-  background: linear-gradient(to bottom right, var(--color-primary), var(--color-secondary));
-  font-size: 5rem;
+.btn--add {
   padding: 1rem 1.25rem;
   border: none;
   border-radius: 50%;
   box-shadow: 0px 0px 12px #646b79;
+  font-size: 2.5rem;
+}
+
+.btn--add:active {
+  transform: scale(.85);
+}
+
+.btn--add-meal {
+  background: linear-gradient(to bottom right, var(--color-primary), var(--color-secondary));
   position: fixed;
   bottom: 17rem;
   right: 2rem;
-  height: 2.5rem;
-}
-
-.btn--add-meal:active {
-  transform: scale(.85);
 }
 
 .btn--add-workout {
   background-color: white;
   color: var(--color-primary);
-  font-size: 5rem;
   padding: 1rem 1.35rem;
-  border: none;
-  border-radius: 50%;
-  box-shadow: 0px 0px 12px #646b79;
   position: fixed;
   bottom: 11rem;
   right: 2rem;
-  height: 2.5rem;
 }
 
 /* Modals */
