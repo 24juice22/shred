@@ -25,6 +25,14 @@ body {
   font-size: 8rem;
   color: var(--color-primary);
 }
+
+.date {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0;
+}
+
 /* Buttons */
 .btn {
   background-color: var(--color-primary);
@@ -56,24 +64,39 @@ body {
 }
 
 .btn--add-meal {
-  background: linear-gradient(to bottom right, rgb(0, 98, 0), rgb(2, 247, 2));
+  background: linear-gradient(to bottom right, var(--color-primary), var(--color-secondary));
   font-size: 5rem;
-  padding: 0 1.75rem .6rem;
+  padding: 1rem 1.25rem;
   border: none;
   border-radius: 50%;
   box-shadow: 0px 0px 12px #646b79;
   position: fixed;
-  top: 5rem;
+  bottom: 17rem;
   right: 2rem;
+  height: 2.5rem;
 }
 
 .btn--add-meal:active {
   transform: scale(.85);
 }
 
+.btn--add-workout {
+  background-color: white;
+  color: var(--color-primary);
+  font-size: 5rem;
+  padding: 1rem 1.35rem;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 0px 12px #646b79;
+  position: fixed;
+  bottom: 11rem;
+  right: 2rem;
+  height: 2.5rem;
+}
+
 /* Modals */
 .modal {
-  border: 8px solid var(--color-primary);
+  background-color: white;
   border-radius: 3.5rem;
   width: 80vw;
   height: 80vh;
@@ -83,14 +106,29 @@ body {
   left: 0;
   right: 0;
   margin: auto;
-  background-color: white;
   visibility: hidden;
   transform: scale(0.1);
   transition: transform .3s, visibility .05s ease-in-out;
 }
 
-.modal--add-meal {
-  background-color: rgb(72, 74, 77);
+.modal--primary {
+  background-color: var(--color-primary);
+}
+
+.modal__title {
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.modal-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
 }
 
 
