@@ -27,10 +27,26 @@ body {
 }
 
 .date {
-  color: white;
+  color: var(--color-secondary);
   font-weight: bold;
   text-align: center;
   margin-top: 0;
+}
+
+/* Containers */
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.container--wide {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container--widest {
+  width: 95%;
+  margin: 0 auto;
 }
 
 /* Buttons */
@@ -127,5 +143,7 @@ body {
   backdrop-filter: blur(8px);
   cursor: pointer;
 }
+
+
 
 
