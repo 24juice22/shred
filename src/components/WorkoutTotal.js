@@ -9,9 +9,9 @@ function WorkoutTotal({ workoutList }) {
     }, 0);
 
   return (
-    <div className="workout-total">
-        <p className="workout-total__description">Total Calories Burned:</p>
-        <p className="workout-total__value">{totalCalories}</p>
+    <div className="total">
+        <p className="total__description">Total Calories Burned:</p>
+        <p className="total__value">{totalCalories}</p>
     </div>
   )
 }

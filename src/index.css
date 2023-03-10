@@ -65,6 +65,12 @@ body {
   cursor: pointer;
 }
 
+.btn--white {
+  background-color: white;
+  border: 2px solid white;
+  color: var(--color-primary);
+}
+
 .btn--outline {
   background-color: transparent;
   transition-duration: .2s;
@@ -155,6 +161,11 @@ body {
   width: 90%;
 }
 
+input {
+  border-radius: .5rem;
+  border: 1px solid var(--color-primary);
+}
+
 input[name=exercise] {
   width: 60%;
   margin-right: .75rem;
@@ -162,6 +173,17 @@ input[name=exercise] {
 
 input[name=calories] {
   width: 20%;
+}
+
+input[name=meal] {
+  width: 50%;
+  margin-right: .5rem;
+  border: 1px solid orange;
+}
+
+input[name=protein] {
+  width: 20%;
+  margin-left: .5rem;
 }
 
 .modal__btn {
@@ -184,8 +206,8 @@ input[name=calories] {
 }
 
 
-/* Workout */
-.workout {
+/* Lists */
+.list {
   display: flex;
   justify-content: space-between;
 }
@@ -195,7 +217,7 @@ input[name=calories] {
   margin: .5rem 0;
 }
 
-.workout-total {
+.total {
   color: var(--color-primary);
   font-weight: bold;
   font-size: 2.5rem;
@@ -204,13 +226,37 @@ input[name=calories] {
   position: absolute;
   left: 0%;
   right: 0%;
-  bottom: 25%
+  bottom: 18%
 }
 
-.workout-total__description {
+.total--meal {
+  color: white;
+  bottom: 3%;
+}
+
+.total__description {
   margin-bottom: .5rem;
 }
 
-.workout-total__value {
+.total__value {
   margin-top: 0;
+}
+
+.meal__text {
+  color: white;
+  margin: .5rem 0;
+}
+
+.meal__text--meal {
+  min-width: 12rem;
+}
+
+.meal__text--calories {
+  min-width: 7rem;
+  text-align: right;
+}
+
+.meal__text--protein {
+  min-width: 4.5rem;
+  text-align: right;
 }
