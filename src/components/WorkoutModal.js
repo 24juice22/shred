@@ -4,17 +4,17 @@ import WorkoutModalForm from './WorkoutModalForm';
 import WorkoutModalList from './WorkoutModalList';
 import WorkoutTotal from './WorkoutTotal';
 
-function AddWorkoutModal({ addWorkoutModalVisible, setAddWorkoutModalVisible, setModal }) {
+function WorkoutModal({ workoutModalVisible, setWorkoutModalVisible, setModal }) {
   const [workoutList, setWorkoutList] = useState([]);
 
   const workoutModalStyle = {
-    visibility: addWorkoutModalVisible ? "visible" : "hidden",
-    transform: addWorkoutModalVisible ? "scale(1)" : "scale(0.1)"
+    visibility: workoutModalVisible ? "visible" : "hidden",
+    transform: workoutModalVisible ? "scale(1)" : "scale(0.1)"
   }
 
   return (
     <div className="modal" style={workoutModalStyle}>
-        <ExitButton setVisibility={setAddWorkoutModalVisible} setModal={setModal}/>    
+        <ExitButton setVisibility={setWorkoutModalVisible} setModal={setModal}/>    
         <h2 className="modal__title modal__title-primary">Workouts</h2>
         <WorkoutModalForm setWorkoutList={setWorkoutList}/>
         <WorkoutModalList workoutList={workoutList} />
@@ -23,4 +23,4 @@ function AddWorkoutModal({ addWorkoutModalVisible, setAddWorkoutModalVisible, se
   )
 }
 
-export default AddWorkoutModal
+export default WorkoutModal

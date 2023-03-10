@@ -1,9 +1,9 @@
 import React from 'react'
 
-function AddMeal({ setAddMealModalVisible, setModal }) {
+function MealButton({ setMealModalVisible, setModal }) {
 
   function handleAddMealClick() {
-    setAddMealModalVisible(true);
+    setMealModalVisible(true);
     setModal(true);
   }
 
@@ -12,4 +12,4 @@ function AddMeal({ setAddMealModalVisible, setModal }) {
   )
 }
 
-export default AddMeal
+export default MealButton

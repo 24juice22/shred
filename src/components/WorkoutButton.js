@@ -1,9 +1,9 @@
 import React from 'react'
 
-function AddWorkout({ setModal, setAddWorkoutModalVisible }) {
+function WorkoutButton({ setModal, setWorkoutModalVisible }) {
 
   function handleAddWorkoutClick() {
-    setAddWorkoutModalVisible(true);
+    setWorkoutModalVisible(true);
     setModal(true);
   }
 
@@ -12,4 +12,4 @@ function AddWorkout({ setModal, setAddWorkoutModalVisible }) {
   )
 }
 
-export default AddWorkout
+export default WorkoutButton
