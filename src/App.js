@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react";
 import Brand from './components/Brand';
 import Day from "./components/Day";
-import AddMeal from "./components/AddMeal";
-import AddWorkout from "./components/AddWorkout";
-import AddMealModal from "./components/AddMealModal";
-import AddWorkoutModal from "./components/AddWorkoutModal";
+import TDEEDisplay from "./components/TDEEDisplay";
+import TDEEModal from "./components/TDEEModal";
+import MealButton from "./components/MealButton";
+import WorkoutButton from "./components/WorkoutButton";
+import MealModal from "./components/MealModal";
+import WorkoutModal from "./components/WorkoutModal";
 import ModalContainer from "./components/ModalContainer";
 import './index.css';
 
 function App() {
-  const [modal, setModal] = useState(false);
-  const [addMealModalVisible, setAddMealModalVisible] = useState(false);
-  const [addWorkoutModalVisible, setAddWorkoutModalVisible] = useState(false);
-  
+  const [modal, setModal] = useState(true);
+  const [TDEEModalVisible, setTDEEModalVisible] = useState(true);
+  const [mealModalVisible, setMealModalVisible] = useState(false);
+  const [workoutModalVisible, setWorkoutModalVisible] = useState(false);
+  const [tDEE, setTDEE] = useState(null);
+  const [tDEEVisible, setTDEEVisible] = useState(false);
+
   useEffect(() => {
     document.body.style.overflow = modal ? "hidden" : "unset";
   }, [modal]);
@@ -22,28 +26,37 @@ function App() {
     <>
       <Brand />
       <Day />
-      <AddMeal 
-        setModal={setModal} 
-        setAddMealModalVisible={setAddMealModalVisible}
-      />
-      <AddWorkout 
+      <TDEEDisplay tDEEVisible={tDEEVisible} tDEE={tDEE}/>
+      <TDEEModal
+        TDEEModalVisible={TDEEModalVisible} 
+        setTDEEModalVisible={setTDEEModalVisible}
         setModal={setModal}
-        setAddWorkoutModalVisible={setAddWorkoutModalVisible}
+        setTDEE={setTDEE}
+        setTDEEVisible={setTDEEVisible}
+      />
+      <MealButton 
+        setModal={setModal} 
+        setMealModalVisible={setMealModalVisible}
+      />
+      <WorkoutButton 
+        setModal={setModal}
+        setWorkoutModalVisible={setWorkoutModalVisible}
       />
       <ModalContainer 
         modal={modal} 
         setModal={setModal} 
-        setAddMealModalVisible={setAddMealModalVisible}
-        setAddWorkoutModalVisible={setAddWorkoutModalVisible}
+        setTDEEModalVisible={setTDEEModalVisible}
+        setMealModalVisible={setMealModalVisible}
+        setWorkoutModalVisible={setWorkoutModalVisible}
       />
-      <AddMealModal 
-        addMealModalVisible={addMealModalVisible} 
-        setAddMealModalVisible={setAddMealModalVisible}
+      <MealModal 
+        mealModalVisible={mealModalVisible} 
+        setMealModalVisible={setMealModalVisible}
         setModal={setModal}
       />
-      <AddWorkoutModal 
-        addWorkoutModalVisible={addWorkoutModalVisible} 
-        setAddWorkoutModalVisible={setAddWorkoutModalVisible}
+      <WorkoutModal 
+        workoutModalVisible={workoutModalVisible} 
+        setWorkoutModalVisible={setWorkoutModalVisible}
         setModal={setModal}
       />
     </>
