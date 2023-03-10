@@ -3,7 +3,6 @@ import React from 'react'
 function AddMeal({ setAddMealModalVisible, setModal }) {
 
   function handleAddMealClick() {
-    console.log("hello");
     setAddMealModalVisible(true);
     setModal(true);
   }

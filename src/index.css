@@ -39,6 +39,11 @@ body {
   margin: 0 auto;
 }
 
+.container--small {
+  width: 70%;
+  margin: 0 auto;
+}
+
 .container--wide {
   width: 90%;
   margin: 0 auto;
@@ -111,8 +116,8 @@ body {
 .modal {
   background-color: white;
   border-radius: 3.5rem;
-  width: 80vw;
-  height: 80vh;
+  width: 90vw;
+  height: 90vh;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -134,6 +139,36 @@ body {
   font-size: 3rem;
 }
 
+.modal__title-primary {
+  color: var(--color-primary);
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__inputs {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+input[name=exercise] {
+  width: 60%;
+  margin-right: .75rem;
+}
+
+input[name=calories] {
+  width: 20%;
+}
+
+.modal__btn {
+  width: 10rem;
+  margin-top: 1rem;
+}
+
 .modal-container {
   position: absolute;
   top: 0;
@@ -144,6 +179,38 @@ body {
   cursor: pointer;
 }
 
+.modal__list {
+  margin-top: 4rem;
+}
 
 
+/* Workout */
+.workout {
+  display: flex;
+  justify-content: space-between;
+}
 
+.workout__text {
+  color: var(--color-primary);
+  margin: .5rem 0;
+}
+
+.workout-total {
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 4rem;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  bottom: 25%
+}
+
+.workout-total__description {
+  margin-bottom: .5rem;
+}
+
+.workout-total__value {
+  margin-top: 0;
+}

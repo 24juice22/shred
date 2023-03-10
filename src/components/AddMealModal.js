@@ -10,7 +10,8 @@ function AddMealModal({ addMealModalVisible, setAddMealModalVisible, setModal })
 
   return (
     <div className="modal modal--primary" style={mealModalStyle}>
-        <ExitButton setVisibility={setAddMealModalVisible} setModal={setModal} />    
+        <ExitButton setVisibility={setAddMealModalVisible} setModal={setModal}/>    
+        <h2 className="modal__title">Meals</h2>
     </div>
   )
 }
