@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import ExitButton from './ExitButton';
-import WorkoutModalForm from './WorkoutModalForm';
-import WorkoutModalList from './WorkoutModalList';
+import ModalHeader from './ModalHeader';
+import WorkoutForm from './WorkoutForm';
+import WorkoutList from './WorkoutList';
 import WorkoutTotal from './WorkoutTotal';
 
 function WorkoutModal({ workoutModalVisible, setWorkoutModalVisible, setModal }) {
@@ -14,10 +15,10 @@ function WorkoutModal({ workoutModalVisible, setWorkoutModalVisible, setModal })
 
   return (
     <div className="modal" style={workoutModalStyle}>
-        <ExitButton setVisibility={setWorkoutModalVisible} setModal={setModal}/>    
-        <h2 className="modal__title modal__title-primary">Workouts</h2>
-        <WorkoutModalForm setWorkoutList={setWorkoutList}/>
-        <WorkoutModalList workoutList={workoutList} />
+        <ExitButton setVisibility={setWorkoutModalVisible} setModal={setModal}/>  
+        <ModalHeader title="Workouts" styling={"modal__title-primary"}/>  
+        <WorkoutForm setWorkoutList={setWorkoutList}/>
+        <WorkoutList workoutList={workoutList} />
         <WorkoutTotal workoutList={workoutList}/>
     </div>
   )

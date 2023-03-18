@@ -4,7 +4,6 @@ function WorkoutTotal({ workoutList }) {
     console.log(workoutList)
 
     let totalCalories = workoutList.reduce((a, b) => {
-        console.log(a)
         return a + Number(b.calories);
     }, 0);
 

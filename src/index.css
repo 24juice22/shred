@@ -54,6 +54,20 @@ body {
   margin: 0 auto;
 }
 
+/* ScrollBar */
+::-webkit-scrollbar {
+  height: auto;
+  width: .75rem;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color-secondary);
+  border-radius: .75rem;
+  border: 1px solid white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: white;
+}
+
 /* Buttons */
 .btn {
   background-color: var(--color-primary);
@@ -192,6 +206,7 @@ input[name=meal] {
   width: 50%;
   margin-right: .5rem;
   border: 1px solid orange;
+  padding: .5rem;
 }
 
 input[name=protein] {
@@ -216,6 +231,8 @@ input[name=protein] {
 
 .modal__list {
   margin-top: 4rem;
+  height: 33%;
+  overflow-y: auto;
 }
 
 
@@ -272,6 +289,7 @@ input[name=protein] {
 .meal__text--protein {
   min-width: 4.5rem;
   text-align: right;
+  margin-right: .5rem;
 }
 
 .tdee {
