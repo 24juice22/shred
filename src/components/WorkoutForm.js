@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function WorkoutModalForm({ setWorkoutList }) {
+function WorkoutForm({ setWorkoutList }) {
     const [workout, setWorkout] = useState({exercise: "", calories: ""});
 
     function handleChange(e) {
@@ -50,4 +50,4 @@ function WorkoutModalForm({ setWorkoutList }) {
   )
 }
 
-export default WorkoutModalForm
+export default WorkoutForm
