@@ -5,7 +5,7 @@ import WorkoutForm from './WorkoutForm';
 import WorkoutList from './WorkoutList';
 import WorkoutTotal from './WorkoutTotal';
 
-function WorkoutModal({ workoutModalVisible, setWorkoutModalVisible, setModal }) {
+function WorkoutModal({ workoutModalVisible, setWorkoutModalVisible, setModal, dailyData, setDailyData }) {
   const [workoutList, setWorkoutList] = useState([]);
 
   const workoutModalStyle = {
@@ -17,9 +17,9 @@ function WorkoutModal({ workoutModalVisible, setWorkoutModalVisible, setModal })
     <div className="modal" style={workoutModalStyle}>
         <ExitButton setVisibility={setWorkoutModalVisible} setModal={setModal}/>  
         <ModalHeader title="Workouts" styling={"modal__title-primary"}/>  
-        <WorkoutForm setWorkoutList={setWorkoutList}/>
+        <WorkoutForm setWorkoutList={setWorkoutList} setDailyData={setDailyData}/>
         <WorkoutList workoutList={workoutList} />
-        <WorkoutTotal workoutList={workoutList}/>
+        <WorkoutTotal workoutCalories={dailyData.workoutCalories}/>
     </div>
   )
 }

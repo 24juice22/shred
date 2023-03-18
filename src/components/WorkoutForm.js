@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function WorkoutForm({ setWorkoutList }) {
+function WorkoutForm({ setWorkoutList, setDailyData }) {
     const [workout, setWorkout] = useState({exercise: "", calories: ""});
 
     function handleChange(e) {
@@ -19,6 +19,12 @@ function WorkoutForm({ setWorkoutList }) {
           return [...prevList, workout]
         });
         setWorkout({exercise: "", calories: ""});
+        setDailyData(prevData => {
+          return {
+            ...prevData,
+            workoutCalories: prevData.workoutCalories + Number(workout.calories)
+          }
+        })
     }
 
   return (

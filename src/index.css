@@ -297,5 +297,14 @@ input[name=protein] {
   font-size: 3rem;
   text-align: center;
   margin-top: 4rem;
+}
 
+.card {
+  border: 2px solid var(--color-primary);
+  background-color: white;
+  color: black;
+  font-size: 1.6rem;
+  border-radius: 2rem;
+  width: 80%;
+  margin: 0 auto;
 }
