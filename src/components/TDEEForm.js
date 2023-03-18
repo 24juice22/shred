@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 
-function TDEEForm({ setTDEE, setTDEEVisible, setModal, setTDEEModalVisible }) {
+function TDEEForm({ setTdee, setTdeeVisible, setModal, setTdeeModalVisible }) {
 
-    const [tDEEInputs, setTDEEInputs] = useState({height: "", weight: "", age: ""});
+    const [tdeeInputs, setTdeeInputs] = useState({height: "", weight: "", age: ""});
 
     function handleChange(e) {
         const newValue = e.target.value.toUpperCase();
-        setTDEEInputs(prevTDEEInputs => {
+        setTdeeInputs(prevTdeeInputs => {
           return {
-            ...prevTDEEInputs,
+            ...prevTdeeInputs,
             [e.target.name]: newValue
           }
         });
@@ -16,12 +16,12 @@ function TDEEForm({ setTDEE, setTDEEVisible, setModal, setTDEEModalVisible }) {
     
     function handleSubmit(e) {
         e.preventDefault();
-        const value = Math.floor(((10 * (tDEEInputs.weight / 2.20462)) + (6.25 * (tDEEInputs.height * 2.54)) - (5 * tDEEInputs.age)) * 1.2);
-        setTDEE(value);
-        setTDEEVisible(true);
-        setTDEEInputs({height: "", weight: "", age: ""});
+        const value = Math.floor(((10 * (tdeeInputs.weight / 2.20462)) + (6.25 * (tdeeInputs.height * 2.54)) - (5 * tdeeInputs.age)) * 1.2);
+        setTdee(value);
+        setTdeeVisible(true);
+        setTdeeInputs({height: "", weight: "", age: ""});
         setModal(false);
-        setTDEEModalVisible(false);
+        setTdeeModalVisible(false);
     }
 
   return (
@@ -30,7 +30,7 @@ function TDEEForm({ setTDEE, setTDEEVisible, setModal, setTDEEModalVisible }) {
             <input 
                 type="text"
                 placeholder="Height (in)"
-                value={tDEEInputs.height}
+                value={tdeeInputs.height}
                 onChange={handleChange}
                 name="height"
                 required
@@ -40,7 +40,7 @@ function TDEEForm({ setTDEE, setTDEEVisible, setModal, setTDEEModalVisible }) {
             <input
                 type="text"
                 placeholder="Weight (lbs)"
-                value={tDEEInputs.weight}
+                value={tdeeInputs.weight}
                 onChange={handleChange}
                 name="weight"
                 required
@@ -50,7 +50,7 @@ function TDEEForm({ setTDEE, setTDEEVisible, setModal, setTDEEModalVisible }) {
             <input
                 type="text"
                 placeholder="Age"
-                value={tDEEInputs.age}
+                value={tdeeInputs.age}
                 onChange={handleChange}
                 name="age"
                 required

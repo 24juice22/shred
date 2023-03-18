@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function MealForm({ setMealList }) {
+function MealForm({ setMealList, dailyData, setDailyData, mealList }) {
     const [meal, setMeal] = useState({meal: "", calories: "", protein: ""});
 
     function handleChange(e) {
@@ -19,6 +19,13 @@ function MealForm({ setMealList }) {
           return [...prevList, meal]
         });
         setMeal({meal: "", calories: "", protein: ""});
+        setDailyData(prevData => {
+            return {
+              ...prevData,
+              mealCalories: prevData.mealCalories + Number(meal.calories),
+              protein: prevData.protein + Number(meal.protein)
+            }
+        })
     }
 
   return (

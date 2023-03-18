@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ModalContainer({ modal, setModal, setTDEEModalVisible, setMealModalVisible, setWorkoutModalVisible }) {
+function ModalContainer({ modal, setModal, setTdeeModalVisible, setMealModalVisible, setWorkoutModalVisible }) {
   
   const modalContainerStyle = {
     visibility: modal ? "visible" : "hidden"
@@ -8,7 +8,7 @@ function ModalContainer({ modal, setModal, setTDEEModalVisible, setMealModalVisi
 
   function handleModalContainer() {
     setModal(false);
-    setTDEEModalVisible(false)
+    setTdeeModalVisible(false)
     setMealModalVisible(false);
     setWorkoutModalVisible(false);
   }
