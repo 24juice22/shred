@@ -11,8 +11,8 @@ import ModalContainer from "./components/ModalContainer";
 import './index.css';
 
 function App() {
-  const [modal, setModal] = useState(true);
-  const [TDEEModalVisible, setTDEEModalVisible] = useState(true);
+  const [modal, setModal] = useState(false);
+  const [TDEEModalVisible, setTDEEModalVisible] = useState(false);
   const [mealModalVisible, setMealModalVisible] = useState(false);
   const [workoutModalVisible, setWorkoutModalVisible] = useState(false);
   const [tDEE, setTDEE] = useState(null);
@@ -21,6 +21,15 @@ function App() {
   useEffect(() => {
     document.body.style.overflow = modal ? "hidden" : "unset";
   }, [modal]);
+
+  useEffect(() => {
+    setTimeout(TDEETimeout, 1000)
+  }, [])
+
+  function TDEETimeout() {
+    setTDEEModalVisible(true);
+    setModal(true);
+  }
 
   return (
     <>
