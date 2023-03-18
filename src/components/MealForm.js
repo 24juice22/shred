@@ -32,27 +32,27 @@ function MealForm({ setMealList }) {
                 name="meal"
                 required
                 autoComplete='off'
-                maxLength={16}
+                maxLength={15}
             />
             <input
-                type="text"
+                type="number"
                 placeholder="Calories"
                 value={meal.calories}
                 onChange={handleChange}
                 name="calories"
                 required
                 autoComplete='off'
-                maxLength={4}
+                max={9999}
             />
             <input
-                type="text"
+                type="number"
                 placeholder="Protein"
                 value={meal.protein}
                 onChange={handleChange}
                 name="protein"
                 required
                 autoComplete='off'
-                maxLength={3}
+                max={999}
             />
         </div>
         <button className="btn btn--white modal__btn">Add</button>
