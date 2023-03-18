@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Brand from './components/Brand';
 import Day from "./components/Day";
-import TDEEDisplay from "./components/TDEEDisplay";
+import TDEEDisplay from "./components/TodaysData";
 import TDEEModal from "./components/TDEEModal";
 import MealButton from "./components/MealButton";
 import WorkoutButton from "./components/WorkoutButton";
@@ -9,25 +9,27 @@ import MealModal from "./components/MealModal";
 import WorkoutModal from "./components/WorkoutModal";
 import ModalContainer from "./components/ModalContainer";
 import './index.css';
+import TodaysData from "./components/TodaysData";
 
 function App() {
   const [modal, setModal] = useState(false);
-  const [TDEEModalVisible, setTDEEModalVisible] = useState(false);
+  const [tdeeModalVisible, setTdeeModalVisible] = useState(false);
   const [mealModalVisible, setMealModalVisible] = useState(false);
   const [workoutModalVisible, setWorkoutModalVisible] = useState(false);
-  const [tDEE, setTDEE] = useState(null);
-  const [tDEEVisible, setTDEEVisible] = useState(false);
+  const [tdee, setTdee] = useState(null);
+  const [tdeeVisible, setTdeeVisible] = useState(false);
+  const [dailyData, setDailyData] = useState({mealCalories: 0, protein: 0, workoutCalories: 0})
 
   useEffect(() => {
     document.body.style.overflow = modal ? "hidden" : "unset";
   }, [modal]);
 
   useEffect(() => {
-    setTimeout(TDEETimeout, 1000)
+    setTimeout(tdeeTimeout, 1000)
   }, [])
 
-  function TDEETimeout() {
-    setTDEEModalVisible(true);
+  function tdeeTimeout() {
+    setTdeeModalVisible(true);
     setModal(true);
   }
 
@@ -35,13 +37,17 @@ function App() {
     <>
       <Brand />
       <Day />
-      <TDEEDisplay tDEEVisible={tDEEVisible} tDEE={tDEE}/>
+      <TodaysData
+        tdeeVisible={tdeeVisible} 
+        tdee={tdee}
+        dailyData={dailyData}
+      />
       <TDEEModal
-        TDEEModalVisible={TDEEModalVisible} 
-        setTDEEModalVisible={setTDEEModalVisible}
+        tdeeModalVisible={tdeeModalVisible} 
+        setTdeeModalVisible={setTdeeModalVisible}
         setModal={setModal}
-        setTDEE={setTDEE}
-        setTDEEVisible={setTDEEVisible}
+        setTdee={setTdee}
+        setTdeeVisible={setTdeeVisible}
       />
       <MealButton 
         setModal={setModal} 
@@ -54,7 +60,7 @@ function App() {
       <ModalContainer 
         modal={modal} 
         setModal={setModal} 
-        setTDEEModalVisible={setTDEEModalVisible}
+        setTdeeModalVisible={setTdeeModalVisible}
         setMealModalVisible={setMealModalVisible}
         setWorkoutModalVisible={setWorkoutModalVisible}
       />
@@ -62,11 +68,15 @@ function App() {
         mealModalVisible={mealModalVisible} 
         setMealModalVisible={setMealModalVisible}
         setModal={setModal}
+        dailyData={dailyData}
+        setDailyData={setDailyData}
       />
       <WorkoutModal 
         workoutModalVisible={workoutModalVisible} 
         setWorkoutModalVisible={setWorkoutModalVisible}
         setModal={setModal}
+        dailyData={dailyData}
+        setDailyData={setDailyData}
       />
     </>
   );
