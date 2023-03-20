@@ -8,7 +8,7 @@ function TodaysData({ tdeeVisible, tdee, dailyData }) {
     }
 
   return (
-    <div className="tdee" style={todaysDataStyle}>
+    <div className="todays-data" style={todaysDataStyle}>
         <h3>Today's Snapshot</h3>
         <Card dailyData={dailyData}/>
     </div>
