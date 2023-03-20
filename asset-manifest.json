@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/shred/static/css/main.21f7a3bf.css",
+    "main.js": "/shred/static/js/main.a3339c5f.js",
+    "index.html": "/shred/index.html",
+    "main.21f7a3bf.css.map": "/shred/static/css/main.21f7a3bf.css.map",
+    "main.a3339c5f.js.map": "/shred/static/js/main.a3339c5f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.21f7a3bf.css",
+    "static/js/main.a3339c5f.js"
+  ]
+}
