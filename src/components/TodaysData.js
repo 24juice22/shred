@@ -10,7 +10,7 @@ function TodaysData({ tdeeVisible, tdee, dailyData }) {
   return (
     <div className="tdee" style={todaysDataStyle}>
         <h3>Today's Snapshot</h3>
-        <Card dailyData={dailyData} tdee={tdee}/>
+        <Card dailyData={dailyData}/>
     </div>
   )
 }

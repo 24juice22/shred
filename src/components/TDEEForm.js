@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 
-function TDEEForm({ setTdee, setTdeeVisible, setModal, setTdeeModalVisible }) {
-
+function TDEEForm({ setDailyData, setTdeeVisible, setModal, setTdeeModalVisible }) {
     const [tdeeInputs, setTdeeInputs] = useState({height: "", weight: "", age: ""});
+
+    const date = new Date().toDateString('en-US');
 
     function handleChange(e) {
         const newValue = e.target.value.toUpperCase();
@@ -17,7 +18,15 @@ function TDEEForm({ setTdee, setTdeeVisible, setModal, setTdeeModalVisible }) {
     function handleSubmit(e) {
         e.preventDefault();
         const value = Math.floor(((10 * (tdeeInputs.weight / 2.20462)) + (6.25 * (tdeeInputs.height * 2.54)) - (5 * tdeeInputs.age)) * 1.2);
-        setTdee(value);
+        setDailyData(prevData => {
+            return {
+              ...prevData,
+              date: date,
+              tdee: value,
+              height: Number(e.target[0].value),
+              weight: Number(e.target[1].value)
+            }
+          })
         setTdeeVisible(true);
         setTdeeInputs({height: "", weight: "", age: ""});
         setModal(false);

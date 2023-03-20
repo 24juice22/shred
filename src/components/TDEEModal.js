@@ -3,7 +3,7 @@ import ExitButton from './ExitButton'
 import TDEEForm from './TDEEForm'
 import ModalHeader from './ModalHeader'
 
-function TDEEModal({ tdeeModalVisible, setTdeeModalVisible, setModal, setTdee, setTdeeVisible }) {
+function TDEEModal({ tdeeModalVisible, setTdeeModalVisible, setModal, setDailyData, setTdeeVisible }) {
 
     const tdeeModalStyle = {
         visibility: tdeeModalVisible ? "visible" : "hidden",
@@ -14,7 +14,7 @@ function TDEEModal({ tdeeModalVisible, setTdeeModalVisible, setModal, setTdee, s
     <div className="modal modal--small" style={tdeeModalStyle}>
         <ExitButton setVisibility={setTdeeModalVisible} setModal={setModal}/> 
         <ModalHeader title="TDEE Calculator" styling={"modal__title-primary"}/>   
-        <TDEEForm setTdee={setTdee} setTdeeVisible={setTdeeVisible} setModal={setModal} setTdeeModalVisible={setTdeeModalVisible}/>
+        <TDEEForm setDailyData={setDailyData} setTdeeVisible={setTdeeVisible} setModal={setModal} setTdeeModalVisible={setTdeeModalVisible}/>
     </div>
   )
 }
