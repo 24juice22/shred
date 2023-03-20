@@ -308,3 +308,10 @@ input[name=protein] {
   width: 80%;
   margin: 0 auto;
 }
+
+.card__totals {
+  display: flex;
+  justify-content: space-around;
+  color: var(--color-primary);
+  font-weight: bold;
+}
