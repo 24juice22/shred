@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Brand from './components/Brand';
 import Day from "./components/Day";
-import TDEEDisplay from "./components/TodaysData";
 import TDEEModal from "./components/TDEEModal";
 import MealButton from "./components/MealButton";
 import WorkoutButton from "./components/WorkoutButton";
@@ -16,9 +15,24 @@ function App() {
   const [tdeeModalVisible, setTdeeModalVisible] = useState(false);
   const [mealModalVisible, setMealModalVisible] = useState(false);
   const [workoutModalVisible, setWorkoutModalVisible] = useState(false);
-  const [tdee, setTdee] = useState(null);
   const [tdeeVisible, setTdeeVisible] = useState(false);
-  const [dailyData, setDailyData] = useState({mealCalories: 0, protein: 0, workoutCalories: 0})
+  const [data, setData] = useState();
+  const [dailyData, setDailyData] = useState({date: "", height: 0, weight: 0, tdee: 0, mealCalories: 0, protein: 0, workoutCalories: 0 })
+
+  const getData = async () => {
+    try {
+      const res = await fetch("https://sheet.best/api/sheets/491bac55-102a-431d-a4b8-23a91fbff86e")
+      const data = await res.json();
+      console.log(data);
+      setData(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getData();
+  }, [])
 
   useEffect(() => {
     document.body.style.overflow = modal ? "hidden" : "unset";
@@ -36,17 +50,16 @@ function App() {
   return (
     <>
       <Brand />
-      <Day />
+      <Day setDailyData={setDailyData} />
       <TodaysData
         tdeeVisible={tdeeVisible} 
-        tdee={tdee}
         dailyData={dailyData}
       />
       <TDEEModal
         tdeeModalVisible={tdeeModalVisible} 
         setTdeeModalVisible={setTdeeModalVisible}
         setModal={setModal}
-        setTdee={setTdee}
+        setDailyData={setDailyData}
         setTdeeVisible={setTdeeVisible}
       />
       <MealButton 
