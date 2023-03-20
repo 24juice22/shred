@@ -9,6 +9,7 @@ import WorkoutModal from "./components/WorkoutModal";
 import ModalContainer from "./components/ModalContainer";
 import './index.css';
 import TodaysData from "./components/TodaysData";
+import Card from "./components/Card";
 
 function App() {
   const [modal, setModal] = useState(false);
@@ -16,7 +17,8 @@ function App() {
   const [mealModalVisible, setMealModalVisible] = useState(false);
   const [workoutModalVisible, setWorkoutModalVisible] = useState(false);
   const [tdeeVisible, setTdeeVisible] = useState(false);
-  const [data, setData] = useState();
+  const [data, setData] = useState(null);
+  const [dataVisible, setDataVisible] = useState(false);
   const [dailyData, setDailyData] = useState({date: "", height: 0, weight: 0, tdee: 0, mealCalories: 0, protein: 0, workoutCalories: 0 })
 
   const getData = async () => {
@@ -34,6 +36,10 @@ function App() {
     getData();
   }, [])
 
+  function toggleData() {
+    setDataVisible(prevValue => !prevValue);
+  }
+
   useEffect(() => {
     document.body.style.overflow = modal ? "hidden" : "unset";
   }, [modal]);
@@ -48,7 +54,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className="app">
       <Brand />
       <Day setDailyData={setDailyData} />
       <TodaysData
@@ -91,7 +97,9 @@ function App() {
         dailyData={dailyData}
         setDailyData={setDailyData}
       />
-    </>
+      <button className="btn btn--outline btn--past" onClick={toggleData}>Show Past Days</button>
+      {dataVisible && data.map(item => <Card dailyData={item}/>)}
+    </div>
   );
 }
 
