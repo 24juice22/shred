@@ -125,7 +125,7 @@ body {
 .btn--add-meal {
   background: linear-gradient(to bottom right, var(--color-primary), var(--color-secondary));
   position: fixed;
-  bottom: 17rem;
+  bottom: 7rem;
   right: 2rem;
 }
 
@@ -134,7 +134,7 @@ body {
   color: var(--color-primary);
   padding: 1rem 1.35rem;
   position: fixed;
-  bottom: 11rem;
+  bottom: 3rem;
   right: 2rem;
 }
 
