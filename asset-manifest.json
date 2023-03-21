@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/shred/static/css/main.b3213854.css",
+    "main.css": "/shred/static/css/main.74d9d58b.css",
     "main.js": "/shred/static/js/main.a3339c5f.js",
     "index.html": "/shred/index.html",
-    "main.b3213854.css.map": "/shred/static/css/main.b3213854.css.map",
+    "main.74d9d58b.css.map": "/shred/static/css/main.74d9d58b.css.map",
     "main.a3339c5f.js.map": "/shred/static/js/main.a3339c5f.js.map"
   },
   "entrypoints": [
-    "static/css/main.b3213854.css",
+    "static/css/main.74d9d58b.css",
     "static/js/main.a3339c5f.js"
   ]
 }
