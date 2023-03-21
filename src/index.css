@@ -134,7 +134,7 @@ body {
   color: var(--color-primary);
   padding: 1rem 1.35rem;
   position: fixed;
-  bottom: 3rem;
+  bottom: 1rem;
   right: 2rem;
 }
 
