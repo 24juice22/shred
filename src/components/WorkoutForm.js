@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function WorkoutForm({ setWorkoutList, setDailyData }) {
+function WorkoutForm({ setWorkoutList, setDailyData, dailyData }) {
     const [workout, setWorkout] = useState({exercise: "", calories: ""});
 
     function handleChange(e) {
@@ -13,7 +13,7 @@ function WorkoutForm({ setWorkoutList, setDailyData }) {
         });
     }
     
-    function handleAdd(e) {
+    const handleAdd = async(e) => {
         e.preventDefault();
         setWorkoutList(prevList => {
           return [...prevList, workout]
@@ -25,7 +25,21 @@ function WorkoutForm({ setWorkoutList, setDailyData }) {
             workoutCalories: prevData.workoutCalories + Number(workout.calories)
           }
         })
-    }
+        try {
+          const res = await fetch(
+            "https://sheet.best/api/sheets/491bac55-102a-431d-a4b8-23a91fbff86e",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(dailyData),
+            }
+          );
+        } catch (error) {
+          console.log(error);
+        }
+    };
 
   return (
     <form className="modal__form container__wide" onSubmit={handleAdd}>

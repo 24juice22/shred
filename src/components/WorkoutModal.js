@@ -17,7 +17,7 @@ function WorkoutModal({ workoutModalVisible, setWorkoutModalVisible, setModal, d
     <div className="modal" style={workoutModalStyle}>
         <ExitButton setVisibility={setWorkoutModalVisible} setModal={setModal}/>  
         <ModalHeader title="Workouts" styling={"modal__title-primary"}/>  
-        <WorkoutForm setWorkoutList={setWorkoutList} setDailyData={setDailyData}/>
+        <WorkoutForm setWorkoutList={setWorkoutList} setDailyData={setDailyData} dailyData={dailyData}/>
         <WorkoutList workoutList={workoutList} />
         <WorkoutTotal workoutCalories={dailyData.workoutCalories}/>
     </div>
